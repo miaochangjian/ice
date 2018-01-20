@@ -6,14 +6,15 @@
     "bootstrap": "lerna bootstrap",
     "setup": "lerna setup",
     "lint": "npm run lint:nofix -- --fix",
-    "lint:nofix": "eslint --cache --ext .js --ext .jsx ./"
+    "lint:nofix": "eslint --cache --ext .js --ext .jsx ./",
+    "precommit-msg": "echo 'Pre-commit checks...'"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/alibaba/ice"
   },
+  "pre-commit": ["precommit-msg", "lint"],
   "devDependencies": {
-    "ice-scripts": "^0.1.0",
     "babel-eslint": "^8.1.2",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.14.0",
@@ -23,15 +24,12 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
     "findup": "^0.1.5",
-    "ghooks": "^2.0.2",
+    "ice-scripts": "^0.1.0",
     "lerna": "^2.5.1",
+    "pre-commit": "^1.2.2",
     "semver-regex": "^1.0.0"
   },
   "config": {
-    "ghooks": {
-      "commit-msg": "./scripts/validate-commit-msg.js",
-      "pre-push": "npm run lint"
-    },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
