@@ -7,7 +7,7 @@
     "setup": "lerna setup",
     "lint": "npm run lint:nofix -- --fix",
     "lint:nofix": "eslint --cache --ext .js --ext .jsx ./",
-    "precommit-msg": "echo 'Pre-commit checks...'"
+    "precommit-msg": "echo Pre-commit checks"
   },
   "repository": {
     "type": "git",
